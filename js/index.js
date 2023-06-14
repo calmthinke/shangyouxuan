@@ -63,6 +63,7 @@ window.onload = function () {
             //3.创建img 元素
             let bigimg = document.createElement('img')
             bigimg.src = imagessrcc[bigimgidx].b
+            bigimg.alt=' '
             //将img追加给大盒子
             bigdiv.appendChild(bigimg)
 
@@ -101,11 +102,15 @@ window.onload = function () {
             })
 
             //4.设置移除事件
-            small.addEventListener('mouseleave', function () {
-                top.removeChild(bigdiv)
-                small.removeChild(maskdiv)
-            })
-
+            // small.addEventListener('mouseleave', function () {
+            //     top.removeChild(bigdiv)
+            //     small.removeChild(maskdiv)
+            // })
+                small.onmouseleave=function ()
+                {
+                  top.removeChild(bigdiv)
+                 small.removeChild(maskdiv)
+                }
 
         }
         )
@@ -134,6 +139,7 @@ window.onload = function () {
             let newimg = document.createElement('img')
 
             newimg.src = imagessrc[i].s
+            newimg.alt=' '
             //追加元素
             newli.appendChild(newimg)
             ul.appendChild(newli)
